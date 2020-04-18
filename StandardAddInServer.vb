@@ -33,15 +33,15 @@ Namespace AttributeHelper
 
         Public Sub Deactivate() Implements Inventor.ApplicationAddInServer.Deactivate
             ' Release objects.
-            Marshal.FinalReleaseComObject(g_inventorApplication)
+            Marshal.ReleaseComObject(g_inventorApplication)
             g_inventorApplication = Nothing
 
             If Not m_attributeButtonDef Is Nothing Then
-                Marshal.FinalReleaseComObject(m_attributeButtonDef)
+                Marshal.ReleaseComObject(m_attributeButtonDef)
             End If
 
             If Not m_UIEvents Is Nothing Then
-                Marshal.FinalReleaseComObject(m_UIEvents)
+                Marshal.ReleaseComObject(m_UIEvents)
                 m_UIEvents = Nothing
             End If
 
